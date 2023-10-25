@@ -23,12 +23,12 @@ def get_all_projects(request):
         return Response(serializer.data)
 def stream(name):
     video_url = ''
-    if name == 'danang':
-        video_url='https://firebasestorage.googleapis.com/v0/b/realtime-cnn.appspot.com/o/danang.mp4?alt=media&token=18e11ee5-2410-4cb0-8fa3-8fba80761e34'
-    else:
-        video_url='https://firebasestorage.googleapis.com/v0/b/realtime-cnn.appspot.com/o/highway.mp4?alt=media&token=faf701bb-26e4-4750-8dbc-eaa4d9db476d'
-    # video_url = f".//media//{name}.mp4"
-    cap = cv2.VideoCapture(video_url) 
+    # if name == 'danang':
+    #     video_url='https://firebasestorage.googleapis.com/v0/b/realtime-cnn.appspot.com/o/danang.mp4?alt=media&token=18e11ee5-2410-4cb0-8fa3-8fba80761e34'
+    # else:
+    #     video_url='https://firebasestorage.googleapis.com/v0/b/realtime-cnn.appspot.com/o/highway.mp4?alt=media&token=faf701bb-26e4-4750-8dbc-eaa4d9db476d'
+    video_url = f".//media//{name}.mp4"
+    cap = cv2.VideoCapture(video_url)
 
     while True:
         ret, frame = cap.read()
