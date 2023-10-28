@@ -28,11 +28,12 @@ SECRET_KEY = 'django-insecure-#ht#!aj3x70c7__@zycv*jzs4k#*u4m&9p*o&at95h6&)-7^qo
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
 INSTALLED_APPS = [
+	'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'deploy_django.wsgi.application'
+ASGI_APPLICATION = 'deploy_django.asgi.application'
 
 
 # Database
