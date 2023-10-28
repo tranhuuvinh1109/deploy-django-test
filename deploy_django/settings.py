@@ -87,7 +87,7 @@ ASGI_APPLICATION = 'deploy_django.asgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse('postgres://django_deploy_sm1j_user:KH52myBzlnpCCheJOmqq7u5DhBZpsXan@dpg-ckpka5hrfc9c73c9flk0-a.oregon-postgres.render.com/django_deploy_sm1j')
 }
 
 
