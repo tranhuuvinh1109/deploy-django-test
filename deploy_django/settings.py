@@ -28,11 +28,12 @@ SECRET_KEY = 'django-insecure-#ht#!aj3x70c7__@zycv*jzs4k#*u4m&9p*o&at95h6&)-7^qo
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
 INSTALLED_APPS = [
+	'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'deploy_django.wsgi.application'
+ASGI_APPLICATION = 'deploy_django.asgi.application'
 
 
 # Database
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'deploy_django.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse('postgres://django_deploy_sm1j_user:KH52myBzlnpCCheJOmqq7u5DhBZpsXan@dpg-ckpka5hrfc9c73c9flk0-a.oregon-postgres.render.com/django_deploy_sm1j')
 }
 
 
